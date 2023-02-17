@@ -30,9 +30,8 @@ class MainApplication(tk.Frame):
         self.menu_bar = tk.Menu(self.root)
         self.root.config(menu=self.menu_bar)
 
-        # Adding FILE menu
+        # Adding FILE menu containing that has the functions "Open File...", "New Text File", "Save", "Save as...", and "Delete file"
         self.file_menu = tk.Menu(self.menu_bar, tearoff=0)
-        # Add commands to file menu 
         self.file_menu.add_command(label="Open File...", command=self.open_text_file)
         # adds separator to organize the file menu relative to the functionality of its commands
         self.file_menu.add_separator()
@@ -47,10 +46,14 @@ class MainApplication(tk.Frame):
         self.action_menu = tk.Menu(self.menu_bar, tearoff=0)
         self.action_menu.add_command(label="Close window", command=self.on_closing)
 
+        # Add third menu called EDIT menu containing the functions "cut", "copy", and "paste"
         self.edit_menu = tk.Menu(self.menu_bar, tearoff=0)
         self.edit_menu.add_command(label="Cut", command=lambda: self.cut_text(False))
+        self.edit_menu.add_separator()
         self.edit_menu.add_command(label="Copy", command=lambda: self.copy_text(False))
+        self.edit_menu.add_separator()
         self.edit_menu.add_command(label="Paste", command=lambda: self.paste_text(False))
+        
 
         # Add cascade and set labels for menus
         self.menu_bar.add_cascade(label="File", menu=self.file_menu)
@@ -177,6 +180,14 @@ class MainApplication(tk.Frame):
         self.display_scroll.pack(side=tk.RIGHT, fill='y')
         self.display_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
+        # create button to export results
+        self.export_button = tk.Button(
+            self.root,
+            text="Export Searches",
+            font=('Arial', 8),
+            command= self.save_export
+        )
+        self.export_button.place(x=20,y=745)
         # creates a status bar at the bottom right of the root container
         self.status_bar = tk.Label(self.root, text="Ready       ", anchor=tk.E)
         self.status_bar.pack(fill='x', side=tk.BOTTOM, ipady=5)
@@ -348,6 +359,32 @@ class MainApplication(tk.Frame):
         # if the file is not in the directory, calls the "Save File as..." function
         else:
             self.save_as_file() 
+    
+    # save the search result to directory 
+    def save_export(self):
+        # Saves the file as... using the "asksaveasfilename" function from the filedialog module
+        # Filetypes can be .txt, .html, .py, or All Files
+        self.text_file = fd.asksaveasfilename(
+            defaultextension=".*", 
+            initialdir="D:/Downloads/", 
+            title="Save File as", 
+            filetypes=(('.txt files', '*.txt'), ('HTML Files', '*.html'),('Python Files', '*.py'), ('All Files', '*.*'))
+        )
+        # checks if the user opened a file in the file dialog
+        if self.text_file:
+            # Updade Status Bars
+            self.name = self.text_file
+            self.status_bar.config(text=f"Saved: {self.name}       ")
+            self.name = self.name.replace("D:/Downloads/", "")
+            self.root.title(f"{self.name}")
+            
+            # Save the file
+            self.w_file = open(self.text_file, 'w')
+            self.w_file.write(self.display_text.get(1.0, tk.END))
+            # Close the file 
+            self.w_file.close()
+        else:
+            pass
 
     # Function that triggers when the "Save as File..." option is clicked in the "File" menu
     # Saves the File as...
@@ -421,4 +458,5 @@ class MainApplication(tk.Frame):
 if __name__=="__main__":
     # calls the main application
     MainApplication()
+
     
