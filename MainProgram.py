@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog as fd
 import re
@@ -104,7 +103,7 @@ class MainApplication(tk.Frame):
         self.label.grid(row=1, column=1, sticky=tk.E, padx=74,)
         
         # Creates the button frame as shortcut for uploading a file
-        self.open_button = ttk.Button(
+        self.open_button = tk.Button(
             self.editor_Frame,
             text="Open file",
             command=self.open_text_file
