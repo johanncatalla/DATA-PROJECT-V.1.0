@@ -220,7 +220,7 @@ class MainApplication(tk.Frame):
         self.lst_entry_input = self.clean_entry_input.split(' ')
         
         # Adding the "|" metacharacter between each keyword on list using join function to search more than one keyword
-        self.keywords = r'\b[^.?!]*(?:' + '|'.join(self.lst_entry_input) + r')(?=[\s.,;:?!]|$)'
+        self.keywords = r'\b[^.?!]*(?:' + '|'.join(self.lst_entry_input) + r')(?=[\s.,;:\/\'-\?!]|$)'
 
         # Getting the value of the option menu whether it is ignorecase or case sensitive to modify the search functionality
         self.option_value = self.value_inside.get()
@@ -295,7 +295,7 @@ class MainApplication(tk.Frame):
     def destroy(self):
         self.display_text.delete('1.0', tk.END)
 
-    # function that triggers when clicking "Upload File" button to select a file that will be inserted to the text widget
+    # function that triggers when clicking "Open File" button to select a file that will be inserted to the text widget
     def open_text_file(self):
 
         # Grabs file using the "askopenfilename" function from the filedialog module
@@ -367,7 +367,7 @@ class MainApplication(tk.Frame):
         self.text_file = fd.asksaveasfilename(
             defaultextension=".*", 
             initialdir="D:/Downloads/", 
-            title="Save File as", 
+            title="Export Searches", 
             filetypes=(('.txt files', '*.txt'), ('HTML Files', '*.html'),('Python Files', '*.py'), ('All Files', '*.*'))
         )
         # checks if the user opened a file in the file dialog
