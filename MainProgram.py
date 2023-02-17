@@ -367,7 +367,7 @@ class MainApplication(tk.Frame):
         self.text_file = fd.asksaveasfilename(
             defaultextension=".*", 
             initialdir="D:/Downloads/", 
-            title="Export Searches", 
+            title="Export Search Results", 
             filetypes=(('.txt files', '*.txt'), ('HTML Files', '*.html'),('Python Files', '*.py'), ('All Files', '*.*'))
         )
         # checks if the user opened a file in the file dialog
