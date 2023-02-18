@@ -219,7 +219,7 @@ class MainApplication(tk.Frame):
         self.lst_entry_input = self.clean_entry_input.split(' ')
         
         # Adding the "|" metacharacter between each keyword on list using join function to search more than one keyword
-        self.keywords = r'\b[^.?!]*(?:' + '|'.join(self.lst_entry_input) + r')(?=[\s.,;:\/\'-\?!]|$)'
+        self.keywords = r'\b[^.?!]*(?:' + '|'.join(self.lst_entry_input) + r')(?=[\s@*&\^%$#.,;:\/\'-\?!]|$)'
 
         # Getting the value of the option menu whether it is ignorecase or case sensitive to modify the search functionality
         self.option_value = self.value_inside.get()
