@@ -18,13 +18,13 @@ The display frame contains the text editor with a scrollbar for displaying searc
 Furthermore, the menu bar in the root container has three menus: the File menu, the Action menu, and the Edit menu. The file menu has five options, namely, "Open File...", "New Text File," "Save," "Save as...," and "Delete File." The action menu only has one option: "close window." Lastly, the edit menu has three actions, namely, "Cut," "Copy," and "Paste."
 
 The search functionality has the following properties:
-It can be case-sensitive or case-insensitive;
-Multiple Words in the search bar are considered separate.;
-The keywords are matched to the sentences that contain them, regardless of the keyword's position in the sentence.;
-Statements with new lines separating them and having no punctuation are considered one sentence.;
-It does not match words with prefixes or suffixes that are digits or alphabets.;
-It matches words with prefixes or suffixes that are special characters or punctuations.;
-The search function returns the following to the text editor in the display frame:
-the number of sentences matches,
-the number of matches per keyword in the text and,
-the sentence matches.
+    It can be case-sensitive or case-insensitive;
+    Multiple Words in the search bar are considered separate.;
+    The keywords are matched to the sentences that contain them, regardless of the keyword's position in the sentence.;
+    Statements with new lines separating them and having no punctuation are considered one sentence.;
+    It does not match words with prefixes or suffixes that are digits or alphabets.;
+    It matches words with prefixes or suffixes that are special characters or punctuations.;
+    The search function returns the following to the text editor in the display frame:
+        the number of sentences matches,
+        the number of matches per keyword in the text and,
+        the sentence matches.
