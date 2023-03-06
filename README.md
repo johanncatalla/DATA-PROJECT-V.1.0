@@ -1,4 +1,8 @@
-# Prelim Project OOP-RegEx-CRUD-Tkinter
+# Project Description
+
+A Text Editor using Tkinter utilizing Object-Oriented Programming (OOP) that lets the user create a new file (CREATE), open (READ), save (UPDATE), and delete (DELETE) files. The program also has a search functionality (REGEX) that matches input word/s to a sentence.  
+
+# Project Details 
 
 The program uses the Tkinter, filedialog, messagebox, regex, and os modules. The class includes the root container, which contains the menus and the three frames:
     The top frame at the top;
