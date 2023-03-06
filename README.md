@@ -1,6 +1,6 @@
 # Project Description
 
-A Text Editor using Tkinter utilizing Object-Oriented Programming (OOP) that lets the user create a new file (CREATE), open (READ), save (UPDATE), and delete (DELETE) files. The program also has a search functionality (REGEX) that matches input word/s to a sentence.  
+A simple text editor using Tkinter utilizing Object-Oriented Programming (OOP) that lets the user create a new file (CREATE), open (READ), save (UPDATE), and delete (DELETE) files. The program also has a search functionality (REGEX) that matches input word/s to a sentence.  
 
 # Project Details 
 
