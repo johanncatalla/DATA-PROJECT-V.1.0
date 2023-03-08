@@ -2,6 +2,8 @@
 
 A simple text editor using Tkinter utilizing Object-Oriented Programming (OOP) that lets the user create a new file (CREATE), open (READ), save (UPDATE), and delete (DELETE) files. The program also has a search functionality (REGEX) that matches input word/s to a sentence.  
 
+![text editor](.docu/2.jpg)
+
 # Project Details 
 
 The program uses the Tkinter, filedialog, messagebox, regex, and os modules. The class includes the root container, which contains the menus and the three frames:
