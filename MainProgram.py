@@ -5,7 +5,7 @@ import re
 import os
 
 # creates the class MainApplication to create object to call when running the program
-class MainApplication(tk.Frame):
+class MainApplication():
 
     def __init__(self): # create GUI widgets using tkinter
 
